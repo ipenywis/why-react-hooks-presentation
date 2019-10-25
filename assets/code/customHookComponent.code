@@ -1,0 +1,22 @@
+function useContact({ defaultValue }) {
+  const [username, setUsername] = useState(defaultValue.username || "")
+  const [email, setEmail] = useState(defaultValue.email || "")
+
+  return {
+    error: username === "" ? 
+      "Please enter a valid username" 
+        : undefined,
+
+    // Contains objects that can be spread onto <input> elements
+    inputProps: {
+      name: {
+        value: name,
+        onChange: e => setName(e.target.value)
+      },
+      email: {
+        value: email,
+        onChange: e => setEmail(e.target.value)
+      }
+    }
+  }
+}

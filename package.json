@@ -14,13 +14,19 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
     "deepmerge": "^2.1.1",
     "normalize.css": "8.0.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-transition-group": "2",
     "spectacle": "5.5.0",
-    "spectacle-renderer": "^0.0.3"
+    "spectacle-code-slide": "^0.5.2",
+    "spectacle-renderer": "^0.0.3",
+    "styled-components": "^4.4.0"
   },
   "devDependencies": {
     "@mdx-js/loader": "^0.15.0-2",

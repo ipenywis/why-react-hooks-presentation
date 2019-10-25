@@ -1,72 +1,211 @@
-import {Cite} from 'spectacle';
-import {DarkSlide, CodeSlide} from './slides';
-import RegularComponent from './regular-component';
+import { Cite, Layout, Fill, Text, Image, Notes } from "spectacle"
+import { DarkSlide, CodeSlide, SemiDarkSlide, PrettyCodeSlide } from "./slides"
+import RegularComponent from "./regular-component"
+import SpeakerComponent, { SpeakerEndScreen } from "./speaker-component.jsx"
+import ReactLogo from "../assets/react-logo.png"
+import ThisIsHooksMeme from "../assets/memes/this_is_hooks.png"
+import { BasicHooksExample, BasicClassExample } from "./code-components.jsx"
+import { BasicEffectsClassExample } from "./code-components.jsx"
+import { BasicEffectsFunctionExample } from "./code-components.jsx"
+import { AdvancedEffectsClassExample } from "./code-components.jsx"
+import { AdvancedEffectsFunctionExample } from "./code-components.jsx"
+import { CustomHookComponent } from "./code-components.jsx"
 
-# Spectacle MDX!
-
-**open the presentation/index.mdx file to get started**
+<SpeakerComponent />
 
 ---
+
+export default SemiDarkSlide
+
+# What is React?
+
+<Image src={ReactLogo} width="4em" height="4em" />
+
+<br />
+
+React is a JavaScript library for building user interfaces.
+
+<br />
+
+It is the view layer for web applications.
+
+---
+
+export default SemiDarkSlide
+
+# Who is using React?
+
+<br />
+<br />
+
+**Facebook - Airbnb - Uber - Netflix**
+
+<br />
+
+**Instagram - Pinterest - Twitter - Reddit**
+
+---
+
+# React Hooks
+
+<br />
+
+Hooks are a new addition in React **16.8**.
+
+They let you use state and other React features without writing a class.
+
+<Cite>React Docs</Cite>
+
+---
+
+# Compatibility
+
+- **Completely opt-in:** You can try Hooks in a few components without rewriting any existing code.
+  But you don’t have to learn or use Hooks right now if you don’t want to.
+
+* **100% backward-compatible:** Hooks don’t contain any breaking changes.
+
+---
+
+# What is a Hook?
+
+<br />
+
+What is a Hook? A Hook is a special function that lets you **“hook into”** React features.
+
+<br />
+
+For example, **useState** is a Hook that lets you add React state to function components. We’ll learn other Hooks later.
+
+---
+
+export default BasicClassExample
+
+---
+
+export default BasicHooksExample
+
+---
+
+# Wait, what?
+
+<br />
+
+<Image src={ThisIsHooksMeme} />
+
+---
+
+export default SemiDarkSlide
+
+# Problems to solve with Hooks
+
+- Wrapper Hell **(HOC, render prop)**
+
+* Huge Components
+
+- Confusing Classes (**this** keyword)
+
+---
+
+# When Would I use a Hook?
+
+- If you have a function component and you need to add some **state** to it.
+
+* Local state management when using Global Store **Ex: Redux**
+
+- **LifeCycle** methods on your Function components
+
+---
+
+# When to avoid using a Hook?
+
+- Only Call Hooks at the **Top Level**
+
+* Don't Call Hooks inside **loops**, **conditions**, or **nested functions**.
+
+- Only use Hooks on Function Component
+
+---
+
 export default DarkSlide
 
-export const transition = ['zoom']
+export const transitions = ["zoom"]
 
-# Write your Spectacle Presentations in Markdown
-## And seamlessly use React Components  
-**How sweet is that**  
-**(super sweet)**
+# LifeCycle Hooks **(Effect)**
 
----
+The Effect Hook let you perform **side effects** in function components.
 
-![datboi](https://pbs.twimg.com/media/CkjFUyTXEAEysBY.jpg)
+<br />
 
+like using **componentWillMount**, **ComponentDidMount...** or any other LifeCycle Method on a class Component
 
----
-
-<RegularComponent/>
-
----
-
-###### Typography
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-##### Heading 5
-
-###### Heading 6
-
-Standard Text
+<Notes>
+  Data fetching, setting up a subscription, and manually changing the DOM in
+  React components are all examples of side effects. Whether or not you’re used
+  to calling these operations “side effects” (or just “effects”), you’ve likely
+  performed them in your components before.
+</Notes>
 
 ---
 
-###### Standard List
-
-- Item 1
-- Item 2
-- Item 3
-- Item 4
+export default BasicEffectsClassExample
 
 ---
 
-> Example Quote
-
-<Cite>Author</Cite>
+export default BasicEffectsFunctionExample
 
 ---
-export default CodeSlide
 
-```javascript
-class SuperCoolComponent extends React.Component {
-  render() {
-    return (
-      <p>code slide works in markdown too whaaaaat</p>
-    );
-  }
-}
-```
+# The Concept Behind useEffect
+
+<br />
+
+`useEffect` works the same as **componentDidMount** & **componentDidUpdate**
+
+which you can use to do some stuff after or before state update
+
+<br />
+
+You can also use it to do some cleanup like **componentWillUnmount**
+
+---
+
+export default AdvancedEffectsClassExample
+
+---
+
+export default AdvancedEffectsFunctionExample
+
+---
+
+# Custom Hooks
+
+Custom Hooks allows you to re-use hook logic and share it among components.
+
+Hooks always need to start with **use** as a naming convention
+
+---
+
+export default CustomHookComponent
+
+---
+
+export default SemiDarkSlide
+
+# So, Why Hooks?
+
+<br />
+
+Hooks makes it simpler to create lightweight embeddable components across your **React App.**
+
+- Manage State/SideEffects without the need for writing a class.
+
+* Build custom hooks for your own state management.
+
+- Readable code & easier to maintain components (smaller).
+
+---
+
+export const transitions = ["fade"]
+
+<SpeakerEndScreen />

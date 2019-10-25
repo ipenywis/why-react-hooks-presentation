@@ -1,0 +1,27 @@
+class BasicEffects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0
+    };
+  }
+
+  componentDidMount() {
+    document.title = `Button Clicked ${this.state.count} times`;
+  }
+
+  componentDidUpdate() {
+    document.title = `Button Clicked ${this.state.count} times`;
+  }
+
+  render() {
+    return (
+      <div>
+        <p>You clicked {this.state.counter} times</p>
+        <button onClick={() => this.setState({ counter: this.state.counter + 1 })}>
+          Click me
+        </button>
+      </div>
+    );
+  }
+}

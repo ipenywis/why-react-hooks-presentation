@@ -1,0 +1,30 @@
+import React from "react"
+
+export class FooBarClassComponent extends React.Component {
+  constructor(props) {
+    super(props)
+    //Initial State
+    this.state = {
+      current: "foo"
+    }
+  }
+
+  toggleCurrent() {
+    this.setState(prevState => ({
+      current: prevState.current === "foo" ? "bar" : "foo"
+    }))
+  }
+
+  render() {
+    const { current } = this.state
+
+    return (
+      <div>
+        <span>Greeting, {current}</span>
+        <button onClick=
+          {this.toggleCurrent.bind(this)} 
+        />
+      </div>
+    )
+  }
+}

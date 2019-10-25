@@ -1,0 +1,13 @@
+componentDidMount() {
+  StoreAPI.subscribeToStore(
+    this.props.product.id,
+    this.handleStoreChange
+  );
+}
+
+componentWillUnmount() {
+  StoreAPI.unsubscribeFromStore(
+    this.props.product.id,
+    this.handleStoreChange
+  );
+}

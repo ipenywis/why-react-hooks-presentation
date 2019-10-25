@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from 'react';
+
+function Store(props) {
+  const [store, setStore] = useState(null);
+
+  useEffect(() => {
+    function handleStoreChange(store) {
+      setStore(store);
+    }
+
+    StoreAPI.
+      subscribeToStore(props.product.id, handleStoreChange);
+
+    return function cleanup() {
+      StoreAPI.
+        unsubscribeFromStore(props.product.id, handleStoreChange);
+    };
+  });
+
+  if (store === null) {
+    return 'Loading...';
+  }
+  return store ? 'Shopping Online' : 'Store Unavailable';
+}

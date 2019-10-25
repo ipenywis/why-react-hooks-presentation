@@ -1,0 +1,20 @@
+import React, { useState } from "react"
+
+function FooBarFC(props) {
+ const [current, setCurrent]= useState("foo")
+
+ const toggleCurrent = () => {
+  setCurrent(prevCurrent => ({
+    current: prevCurrent === "foo" ? "bar" : "foo"
+  }))
+ }
+
+ return (
+   <div>
+     <span>Greeting, {current}</span>
+     <button 
+      onClick={this.toggleCurrent.bind(this)}
+      />
+   </div>
+ )
+}
